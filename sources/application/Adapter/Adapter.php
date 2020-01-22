@@ -16,6 +16,7 @@ class Adapter {
 	 * @var \PDO
 	 */
 	private $connection;
+	private $stmt;
 
 	private function __construct(){}
 
@@ -43,15 +44,22 @@ class Adapter {
 			$this->getConnection();
 			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
-			$stmt = $this->connection->prepare($query);
+			$this->stmt = $this->connection->prepare($query);
 			if (!is_array($args)) {
 				$args = array($args);
 			}
-
-			$stmt->execute($args);
+			$this->stmt->execute($args);
 			$this->dropConnection();
+			return $this;
 		} catch (\PDOException $e) {
 			Logger::getInst()->debug("Error is thrown with message - " . $e->getMessage());
+		}
+	}
+	public function fetch(){
+		if($row = $this->stmt->fetch(\PDO::FETCH_NUM)){
+			if(is_array($row) && count($row) == 1) 
+				$row = $row[0];
+			return $row;
 		}
 	}
 

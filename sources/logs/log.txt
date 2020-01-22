@@ -1,7 +1,7 @@
-[INFO][28-02-2018 10:17:33]: Core instance created
-[INFO][28-02-2018 10:17:33]: Core::getLoader
-[INFO][28-02-2018 10:17:33]: Core::createLoader
-[INFO][28-02-2018 10:17:33]: Starting to load file \load-files\market.eu.20180227
-[INFO][28-02-2018 10:17:33]: Starting to parse file
-[INFO][28-02-2018 10:17:33]: File parsing is finished
-[INFO][28-02-2018 10:17:33]: File load is finished
+[INFO][23-01-2020 01:06:32]: Core instance created
+[INFO][23-01-2020 01:06:32]: Core::getLoader
+[INFO][23-01-2020 01:06:32]: Core::createLoader
+[INFO][23-01-2020 01:06:32]: Starting to load file load-files/market.us.20180228
+[INFO][23-01-2020 01:06:32]: File load is finished
+[INFO][23-01-2020 01:06:32]: Starting to parse file
+[INFO][23-01-2020 01:06:32]: File parsing is finished. 5 rows inserted

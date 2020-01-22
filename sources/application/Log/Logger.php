@@ -47,7 +47,7 @@ class Logger {
 	}
 
 	private function openFile() {
-		$this->logFileResource = @fopen($this->logFile, "r");
+		$this->logFileResource = @fopen($this->logFile, "a");
 	}
 
 	private function closeFile() {

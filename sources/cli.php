@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL);
 require_once "Application/Core.php";
 
 $argv = $_SERVER["argv"];
