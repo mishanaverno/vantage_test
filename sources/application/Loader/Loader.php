@@ -25,13 +25,12 @@ class Loader {
 			while (($data = fgetcsv($handle, "1000", ",")) !== false) {
 				$fileContent[] = $data;
 			}
+			fclose($handle);
 			unset($fileContent[0]);
 			Logger::getInst()->info("File load is finished");
 			preg_match("/market\.(.*?)\./m",$file,$match);
-			$parser = $match[1];
+			$parser = isset($match[1]) ? $match[1] : NULL;
 			$this->parse($fileContent, $parser);
-
-			
 		} catch (\ErrorException $e){
 			Logger::getInst()->warn("Error is thrown with message - " . $e->getMessage());
 			Logger::getInst()->info("File loading is is canceled");
@@ -40,26 +39,29 @@ class Loader {
 
 	private function parse($content, $parser = false) {
 		Logger::getInst()->info("Starting to parse file");
-		$counter = 0;
 		array_walk($content, function($entry) use ($parser, &$counter){
 			$parser = ParserFactory::getParser($parser);
 			$fieldsToInsert = $parser->setDate($this->getDate())->parse($entry);
 			$query = "INSERT INTO `market_data` (id_value, price, is_noon, update_date) VALUES (?, ?, ?, ?)";
-			if($fieldsToInsert !== false){
-				Adapter::getInst()->exec($query,$fieldsToInsert);
-				$counter++;
-			}
+			Adapter::getInst()->addToQueue($query,$fieldsToInsert);
 		});
-
-		Logger::getInst()->info("File parsing is finished. $counter rows inserted");
+		$count = Adapter::getInst()->execQueue();
+		Logger::getInst()->info("File parsing is finished. $count rows inserted");
 	}
 	private function parseDate($file){
-		preg_match("/\.([0-9]{8})/m",$file,$match);
-		$this->date = \DateTime::createFromFormat("Ymd",$match[1])->format("Y-m-d");
+		try{
+			if(!preg_match("/\.([0-9]{8})/m",$file,$match)) 
+				throw new \ErrorException("Not correct date format in filename", 1);
+			$this->date = \DateTime::createFromFormat("Ymd",$match[1])->format("Y-m-d");
+		}catch(\ErrorException $e){
+			Logger::getInst()->warn("Error is thrown with message - " . $e->getMessage());
+			exit;
+		}
+		
 	}
 	private function getDate()
 	{	
-		return $this->date ? $this->date : date("Y-m-d"); 
+		return $this->date;
 	}
 
 }

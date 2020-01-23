@@ -1,7 +1,88 @@
-[INFO][23-01-2020 01:06:32]: Core instance created
-[INFO][23-01-2020 01:06:32]: Core::getLoader
-[INFO][23-01-2020 01:06:32]: Core::createLoader
-[INFO][23-01-2020 01:06:32]: Starting to load file load-files/market.us.20180228
-[INFO][23-01-2020 01:06:32]: File load is finished
-[INFO][23-01-2020 01:06:32]: Starting to parse file
-[INFO][23-01-2020 01:06:32]: File parsing is finished. 5 rows inserted
+[INFO][23-01-2020 09:42:46]: Core instance created
+[INFO][23-01-2020 09:42:46]: Core::getLoader
+[INFO][23-01-2020 09:42:46]: Core::createLoader
+[INFO][23-01-2020 09:42:46]: Starting to load file load-files/market.us.20180228
+[INFO][23-01-2020 09:42:46]: File load is finished
+[INFO][23-01-2020 09:42:46]: Starting to parse file
+[DEBUG][23-01-2020 09:42:46]: Error is thrown with message - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+[DEBUG][23-01-2020 09:42:46]: Error is thrown with message - SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id_value' cannot be null
+[INFO][23-01-2020 09:42:46]: File parsing is finished. 5 rows inserted
+[INFO][23-01-2020 09:42:52]: Core instance created
+[INFO][23-01-2020 09:42:52]: Core::getLoader
+[INFO][23-01-2020 09:42:52]: Core::createLoader
+[INFO][23-01-2020 09:42:52]: Starting to load file load-files/market.ed.20180228
+[WARN][23-01-2020 09:42:52]: Error is thrown with message - CSV file Not Found
+[INFO][23-01-2020 09:42:52]: File loading is is canceled
+[INFO][23-01-2020 09:42:57]: Core instance created
+[INFO][23-01-2020 09:42:57]: Core::getLoader
+[INFO][23-01-2020 09:42:57]: Core::createLoader
+[INFO][23-01-2020 09:42:57]: Starting to load file load-files/market.ed.20180227
+[INFO][23-01-2020 09:42:57]: File load is finished
+[INFO][23-01-2020 09:42:57]: Starting to parse file
+[INFO][23-01-2020 09:44:24]: Core instance created
+[INFO][23-01-2020 09:44:24]: Core::getLoader
+[INFO][23-01-2020 09:44:24]: Core::createLoader
+[INFO][23-01-2020 09:44:24]: Starting to load file load-files/market.ed.20180227
+[INFO][23-01-2020 09:44:24]: File load is finished
+[INFO][23-01-2020 09:44:24]: Starting to parse file
+[INFO][23-01-2020 09:45:47]: Core instance created
+[INFO][23-01-2020 09:45:47]: Core::getLoader
+[INFO][23-01-2020 09:45:47]: Core::createLoader
+[INFO][23-01-2020 09:45:47]: Starting to load file load-files/market.ed.20180227
+[INFO][23-01-2020 09:45:47]: File load is finished
+[INFO][23-01-2020 09:45:47]: Starting to parse file
+[WARN][23-01-2020 09:45:47]: Error is thrown with message - Not found parser ED
+[INFO][23-01-2020 09:46:23]: Core instance created
+[INFO][23-01-2020 09:46:23]: Core::getLoader
+[INFO][23-01-2020 09:46:23]: Core::createLoader
+[INFO][23-01-2020 09:46:23]: Starting to load file load-files/market.ed.20180227
+[INFO][23-01-2020 09:46:23]: File load is finished
+[INFO][23-01-2020 09:46:23]: Starting to parse file
+[WARN][23-01-2020 09:46:23]: Error is thrown with message - Not found parser class Application\Parser\ParserED
+[INFO][23-01-2020 09:46:54]: Core instance created
+[INFO][23-01-2020 09:46:54]: Core::getLoader
+[INFO][23-01-2020 09:46:54]: Core::createLoader
+[INFO][23-01-2020 09:46:54]: Starting to load file load-files/market.20180227
+[INFO][23-01-2020 09:46:54]: File load is finished
+[INFO][23-01-2020 09:46:54]: Starting to parse file
+[INFO][23-01-2020 09:51:35]: Core instance created
+[INFO][23-01-2020 09:51:35]: Core::getLoader
+[INFO][23-01-2020 09:51:35]: Core::createLoader
+[INFO][23-01-2020 09:51:35]: Starting to load file load-files/market.20180227
+[INFO][23-01-2020 09:51:35]: File load is finished
+[INFO][23-01-2020 09:51:35]: Starting to parse file
+[WARN][23-01-2020 09:51:35]: Error is thrown with message - Not found parser class Application\Parser\Parser
+[INFO][23-01-2020 09:53:13]: Core instance created
+[INFO][23-01-2020 09:53:13]: Core::getLoader
+[INFO][23-01-2020 09:53:13]: Core::createLoader
+[INFO][23-01-2020 09:53:13]: Starting to load file load-files/market.20180227
+[INFO][23-01-2020 09:53:13]: File load is finished
+[INFO][23-01-2020 09:53:13]: Starting to parse file
+[WARN][23-01-2020 09:53:13]: Error is thrown with message - Not found parser class in filename
+[INFO][23-01-2020 09:54:28]: Core instance created
+[INFO][23-01-2020 09:54:28]: Core::getLoader
+[INFO][23-01-2020 09:54:28]: Core::createLoader
+[INFO][23-01-2020 09:54:28]: Starting to load file load-files/market.20180227
+[INFO][23-01-2020 09:54:28]: File load is finished
+[INFO][23-01-2020 09:54:28]: Starting to parse file
+[WARN][23-01-2020 09:54:28]: Error is thrown with message - Not found parser class in filename
+[INFO][23-01-2020 10:02:34]: Core instance created
+[INFO][23-01-2020 10:02:34]: Core::getLoader
+[INFO][23-01-2020 10:02:34]: Core::createLoader
+[WARN][23-01-2020 10:02:34]: Error is thrown with message - Not correct date in filename
+[INFO][23-01-2020 10:06:47]: Core instance created
+[INFO][23-01-2020 10:06:47]: Core::getLoader
+[INFO][23-01-2020 10:06:47]: Core::createLoader
+[INFO][23-01-2020 10:06:47]: Starting to load file load-files/market.us.20180228
+[INFO][23-01-2020 10:06:47]: File load is finished
+[INFO][23-01-2020 10:06:47]: Starting to parse file
+[DEBUG][23-01-2020 10:06:47]: Error is thrown with message - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+[DEBUG][23-01-2020 10:06:47]: Error is thrown with message - SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id_value' cannot be null
+[INFO][23-01-2020 10:06:47]: File parsing is finished. 5 rows inserted
+[INFO][23-01-2020 10:07:08]: Core instance created
+[INFO][23-01-2020 10:07:08]: Core::getLoader
+[INFO][23-01-2020 10:07:08]: Core::createLoader
+[INFO][23-01-2020 10:07:08]: Starting to load file load-files/market.us.20180228
+[INFO][23-01-2020 10:07:08]: File load is finished
+[INFO][23-01-2020 10:07:08]: Starting to parse file
+[WARN][23-01-2020 10:07:08]: Error is thrown with message - Date was not set in parser

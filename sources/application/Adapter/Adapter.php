@@ -7,6 +7,7 @@ require_once (APP_PATH . "/Log/Logger.php");
 
 use Application\Conf\Config as Conf;
 use Application\Log\Logger as Logger;
+use ErrorException;
 
 class Adapter {
 
@@ -17,8 +18,11 @@ class Adapter {
 	 */
 	private $connection;
 	private $stmt;
+	private $queue;
 
-	private function __construct(){}
+	private function __construct(){
+		$this->queue = [];
+	}
 
 	public static function getInst() {
 		if (!isset(self::$inst)){
@@ -50,10 +54,10 @@ class Adapter {
 			}
 			$this->stmt->execute($args);
 			$this->dropConnection();
-			return $this;
 		} catch (\PDOException $e) {
 			Logger::getInst()->debug("Error is thrown with message - " . $e->getMessage());
 		}
+		return $this;
 	}
 	public function fetch(){
 		if($row = $this->stmt->fetch(\PDO::FETCH_NUM)){
@@ -62,7 +66,28 @@ class Adapter {
 			return $row;
 		}
 	}
-
-
+	public function addToQueue($query, $args){
+		$this->queue[] = (object) [
+			'query' => $query,
+			'args' => $args
+		];
+		return $this;
+	}
+	public function execQueue(){
+		$counter = 0;
+		array_walk($this->queue,function($task) use (&$counter) {
+			if($this->exec($task->query,$task->args)->isComplete()){
+				$counter++;
+			}
+		});
+		$this->queue = [];
+		return $counter;
+	}
+	public function isComplete(){
+		return $this->stmt->errorCode() == "00000";
+	}
+	public function queueLength(){
+		return count($this->queue);
+	}
 
 }
